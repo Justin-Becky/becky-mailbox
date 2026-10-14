@@ -12,8 +12,8 @@ window.MAILBOX_CONFIG = {
   birthday: "2026-10-16",
   daysBefore: 7,
   recipient: "Becky",
-  locale: "en-US",
-  signature: "With all my love,\nyour favourite person ♡",
+  locale: "fr-CA",
+  signature: "Avec tout mon amour,\nJu ♡",
   showUpcoming: true,
 
   letters: [

@@ -190,25 +190,25 @@
   function plural(n, one, many) { return n === 1 ? one : many; }
 
   function subtitleText(s) {
-    if (s.daysToStart > 0) return "Something lovely is on its way…";
-    if (s.daysToBirthday === 0) return "Happy birthday, " + NAME + "! ♡";
-    if (s.daysToBirthday > 0) return s.daysToBirthday + " " + plural(s.daysToBirthday, "day", "days") + " until your birthday ♡";
-    return "Your birthday letters ♡";
+    if (s.daysToStart > 0) return "Je te prépare quelque chose de cute...";
+    if (s.daysToBirthday === 0) return "Bonne fête mon amour! ♡";
+    if (s.daysToBirthday > 0) return s.daysToBirthday + " " + plural(s.daysToBirthday, "jour", "jours") + " avant ton anniversaire ♡";
+    return "Tes lettres d'anniversaires ♡";
   }
 
   function hintText(s) {
     var n = s.unread.length;
-    if (n === 1) return "You've got mail! Tap the mailbox ♡";
-    if (n > 1) return "You've got " + n + " letters waiting! Tap the mailbox ♡";
+    if (n === 1) return "Tu as du couriers! Tap sur la mailbox ♡";
+    if (n > 1) return "Tu as " + n + " lettres en attente! Tap sur la mailbox ♡";
     if (s.daysToStart > 0) {
-      return "Your mailbox is empty for now… the first letter arrives " +
-        (s.daysToStart === 1 ? "tomorrow." : "in " + s.daysToStart + " days.");
+      return "Ta boite postale est vide… ta première lettre arrive " +
+        (s.daysToStart === 1 ? "demain." : "dans " + s.daysToStart + " jours.");
     }
     if (s.upcoming.length) {
       var d = daysBetween(s.today, s.upcoming[0].date);
-      return "All read! Another letter arrives " + (d === 1 ? "tomorrow" : "in " + d + " days") + " ♡";
+      return "Tout est lu! une autre lettre arrive" + (d === 1 ? "demain" : "dans " + d + " jours") + " ♡";
     }
-    return "Every letter has been delivered. Reread them anytime ♡";
+    return "Toutes les lettres ont étées lues. Relit les quand tu veux ♡";
   }
 
   function render() {
@@ -361,7 +361,7 @@
     var pal = item.palette;
     el.letter.style.setProperty("--accent", pal.accent);
 
-    el.letterNum.textContent = "Letter " + (item.index + 1) + " of " + LETTERS.length;
+    el.letterNum.textContent = "Lettre " + (item.index + 1) + " de " + LETTERS.length;
     el.letterDate.textContent = fmt(item.date, { weekday: "long", month: "long", day: "numeric" });
     el.letterTitle.textContent = l.title || "";
 
@@ -599,7 +599,7 @@
   /* ---------- Start ---------- */
 
   el.title.textContent = NAME + "'s Mailbox";
-  el.envLabel.textContent = "For " + NAME + " ♡";
+  el.envLabel.textContent = "Pour " + NAME + " ♡";
   document.title = NAME + "'s Mailbox";
   makeFloaties();
   render();
