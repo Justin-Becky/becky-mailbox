@@ -9,7 +9,7 @@
  * Lines in [brackets] are spots to personalise with your own memories.
  */
 window.MAILBOX_CONFIG = {
-  birthday: "2026-10-16",
+  birthday: "2026-10-31",
   daysBefore: 7,
   recipient: "Becky",
   locale: "fr-CA",
